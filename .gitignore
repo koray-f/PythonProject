@@ -1,0 +1,19 @@
+# Python derleme dosyaları
+__pycache__/
+*.py[cod]
+*.so
+
+# Sanal ortamlar
+.venv/
+env/
+venv/
+
+# Model ağırlıkları
+*.bin
+*.pt
+kayitli_model/
+results/
+logs/
+
+# Veri dosyaları
+*.csv
