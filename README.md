@@ -1,4 +1,4 @@
-# 📘 AKILLI BELEDİYE ASİSTANI - PROJE TANITIMI
+# 📘 AKILLI BELEDİYE ASİSTANI 
 
 Bu proje, belediyeye gelen vatandaş şikayet ve taleplerini doğal dil işleme (NLP) teknikleriyle analiz ederek, uygun müdürlüğe otomatik yönlendirmeyi amaçlamaktadır. Model olarak Türkçe BERT (BERTurk) kullanılmıştır. Kullanıcı etkileşimi için Gradio tabanlı bir arayüz geliştirilmiştir.
 
