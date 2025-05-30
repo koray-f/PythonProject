@@ -1,37 +1,47 @@
-📘 AKILLI BELEDİYE ASİSTANI - PROJE TANITIMI
+# 📘 AKILLI BELEDİYE ASİSTANI - PROJE TANITIMI
 
-Bu proje, belediyeye gelen vatandaş şikayet ve taleplerini doğal dil işleme (NLP) teknikleriyle analiz eder ve doğru müdürlüğe otomatik olarak yönlendirir. Model olarak Türkçe BERT (BERTurk) kullanılmıştır. Arayüz Gradio ile oluşturulmuştur.
+Bu proje, belediyeye gelen vatandaş şikayet ve taleplerini doğal dil işleme (NLP) teknikleriyle analiz ederek, uygun müdürlüğe otomatik yönlendirmeyi amaçlamaktadır. Model olarak Türkçe BERT (BERTurk) kullanılmıştır. Kullanıcı etkileşimi için Gradio tabanlı bir arayüz geliştirilmiştir.
 
-👨‍💻 GELİŞTİREN:
-Koray Filazoğlu - 222503304
+## 👨‍💻 GELİŞTİREN
 
-📦 MODÜLER YAPI:
-- data_utils.py        → Veriyi yükler, etiketleri işler
-- model_utils.py       → Tokenizer, model, trainer kurulumları
-- classify_utils.py    → Sınıflandırma ve kayıt işlemleri
-- app.py               → Arayüz ve kullanıcı girişi / model yükleme
-- kayitli_model/       → Eğitilmiş model klasörü (otomatik oluşturulur)
-- guncellenmis_birlesik_belediye_verisi.csv → Etiketli eğitim verisi
+**Koray Filazoğlu**  
+**Öğrenci No:** 222503304
 
-🚀 KULLANIM ADIMLARI:
+## 📦 MODÜLER YAPI
 
-1. GEREKLİ KÜTÜPHANELERİ YÜKLE:
+- `data_utils.py` → Veriyi yükler, etiketleri işler  
+- `model_utils.py` → Tokenizer, model ve Trainer kurulumları  
+- `classify_utils.py` → Sınıflandırma ve kayıt işlemleri  
+- `app.py` → Arayüz ve kullanıcı girişi / model yükleme  
+- `kayitli_model/` → Eğitilmiş model klasörü (otomatik oluşturulur)  
+- `guncellenmis_birlesik_belediye_verisi.csv` → Etiketli eğitim verisi  
+
+## 🚀 KULLANIM ADIMLARI
+
+1. Gerekli kütüphaneleri yükleyin:
+   ```bash
    pip install -r requirements.txt
 
-2. MODELİ EĞİT (bir kez):
-   - train_model.py (isteğe bağlı olarak hazırlanabilir)
-   - veya app.py ilk kez çalıştırıldığında eğitimi otomatik yapar
+    Modeli eğitin (yalnızca ilk kullanım için):
 
-3. KAYITLI MODEL VARSA SADECE ARAYÜZÜ BAŞLAT:
-   python app.py
+        İsteğe bağlı olarak train_model.py dosyası oluşturulabilir.
 
-4. Arayüz açıldığında `http://127.0.0.1:7861` adresine gidin.
+        Alternatif olarak, app.py ilk çalıştırıldığında eğitimi otomatik başlatır.
 
-📤 VERİ GİRİŞİ:
-Kullanıcı Adı, Telefon ve Şikayet girilerek şikayet ilgili müdürlüğe yönlendirilir. Sonuç arayüzde gösterilir ve kayıt paneline eklenir.
+    Eğitilmiş model mevcutsa yalnızca arayüzü başlatın:
 
-📌 NOT:
-- Arayüzde model eğitimi yapılmaz. Eğitilmiş model `kayitli_model/` içinde yer almalıdır.
-- `kayitli_model` klasörü yoksa sistem hata verir.
+python app.py
 
+Tarayıcıdan aşağıdaki adrese gidin:
+
+    http://127.0.0.1:7861
+
+📤 VERİ GİRİŞİ
+
+Kullanıcı arayüzünde Ad Soyad, Telefon Numarası ve Şikayet bilgileri girilerek işlem yapılır. Model, şikayeti analiz ederek en uygun müdürlüğe yönlendirir. Sonuç kullanıcıya gösterilir ve sistemde kayıt altına alınır.
+📌 NOTLAR
+
+    Arayüzde model eğitimi yapılmaz. Eğitilmiş modelin kayitli_model/ klasöründe bulunması gerekir.
+
+    kayitli_model/ klasörü yoksa sistem çalışmaz ve hata verir.
 
